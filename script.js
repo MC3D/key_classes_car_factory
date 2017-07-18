@@ -67,7 +67,7 @@ class Car extends Factory {
 
 class Sport extends Car {
   constructor(options) {
-    super(options);
+    super();
     let that = this;
     for (var key in options) {
       if (options.hasOwnProperty(key)) {
