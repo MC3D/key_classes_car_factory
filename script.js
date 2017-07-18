@@ -17,12 +17,12 @@
 // Create the Factory class bellow:
 
 class Factory {
-  constructor() {
+  constructor(options) {
     this.make = 'Mazda',
     this.location = 'USA',
     this.airbags = true,
     this.abs = true,
-    this.warranty = '60,000 miles / 3 years'
+    this.warranty = options.warranty || '60,000 miles / 3 years'
   }
 
   static massBuild(quantity, options) {
@@ -45,7 +45,7 @@ class Factory {
 
 class Car extends Factory {
   constructor(options) {
-    super();
+    super({ warranty: '100,000 miles / 5 years' });
     let that = this;
     for (var key in options) {
       if (options.hasOwnProperty(key)) {
@@ -55,7 +55,6 @@ class Car extends Factory {
     this.enginesize = 4;
     this.navigation = true;
     this.backupcamera = true;
-    this.warranty = '100,000 miles / 5 years';
   }
 }
 
@@ -91,7 +90,7 @@ class Sport extends Car {
 
 class Truck extends Factory {
   constructor(options) {
-    super();
+    super({ warranty: '150,000 miles / 6 years' });
     let that = this;
     for (var key in options) {
       if (options.hasOwnProperty(key)) {
@@ -102,7 +101,6 @@ class Truck extends Factory {
       backupcamera: true,
       audio: 'basic'
     }
-    this.warranty = '150,000 miles / 6 years'
   }
 }
 
