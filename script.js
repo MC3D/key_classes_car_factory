@@ -99,7 +99,7 @@ class Car extends Factory {
 
 class Sport extends Car {
   constructor(config = {}) {
-    super(config = {});
+    super(config);
     this.model = config.model,
     this.trim = config.trim,
     this.transmission = config.transmission,
